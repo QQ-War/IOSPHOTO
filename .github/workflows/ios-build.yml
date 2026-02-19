@@ -1,0 +1,62 @@
+name: Build iOS
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "Sources/**/*.swift"
+      - "Config/**"
+      - "project.yml"
+      - "scripts/build_ios.sh"
+      - ".github/workflows/ios-build.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "Sources/**/*.swift"
+      - "Config/**"
+      - "project.yml"
+      - "scripts/build_ios.sh"
+      - ".github/workflows/ios-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate and build
+        run: ./scripts/build_ios.sh
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iosphoto-unsigned-ipa
+          path: build/iosphoto-unsigned.ipa
+          if-no-files-found: error
+
+      - name: Publish IPA to Release
+        if: github.event_name != 'pull_request'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: iosphoto-ci-latest
+          name: iosphoto CI latest
+          body: |
+            Auto-updated unsigned IPA from CI.
+            Commit: ${{ github.sha }}
+          prerelease: true
+          make_latest: false
+          files: |
+            build/iosphoto-unsigned.ipa

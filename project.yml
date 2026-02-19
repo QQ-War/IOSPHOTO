@@ -1,0 +1,55 @@
+name: iosphoto
+options:
+  bundleIdPrefix: com.qqwar
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+settings:
+  SWIFT_VERSION: "5.0"
+  IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+  TARGETED_DEVICE_FAMILY: "1,2"
+  CODE_SIGN_STYLE: Automatic
+configs:
+  Debug: debug
+  Release: release
+targets:
+  iosphoto:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources/iosphoto
+        excludes:
+          - GravityWidget.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.qqwar.iosphoto
+        PRODUCT_NAME: iosphoto
+        INFOPLIST_FILE: Config/iosphoto-Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0"
+        GENERATE_INFOPLIST_FILE: NO
+        UILaunchScreen: ""
+        SUPPORTS_MACCATALYST: NO
+    dependencies:
+      - target: GravityWidget
+        embed: true
+        codeSign: false
+
+  GravityWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources/iosphoto/GravityWidget.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.qqwar.iosphoto.GravityWidget
+        PRODUCT_NAME: GravityWidget
+        INFOPLIST_FILE: Config/GravityWidget-Info.plist
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0"
+        GENERATE_INFOPLIST_FILE: NO
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
