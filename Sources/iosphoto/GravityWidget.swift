@@ -65,7 +65,7 @@ struct GravityWidget: Widget {
             GravityWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationName("重力相册")
+        .configurationDisplayName("重力相册")
         .description("快速进入带重力感应的物理世界。")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
