@@ -63,7 +63,6 @@ struct GravityWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GravityWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("重力相册")
         .description("快速进入带重力感应的物理世界。")
