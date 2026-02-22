@@ -66,9 +66,19 @@ Workflow：`.github/workflows/ios-build.yml`
 ### 📦 Release 产物
 - Release 名称：`iosphoto CI latest`
 - Tag：`iosphoto-ci-latest`
-- 文件：`iosphoto-unsigned.ipa`
+- 文件：`IOSPHOTO.ipa`
 
 每次 `main` 上触发构建后会自动更新该 Release。
+
+### 📚 SideStore 源
+- 源文件：`apps.json`
+- 源地址：`https://raw.githubusercontent.com/QQ-War/IOSPHOTO/main/apps.json`
+- IPA 下载地址（JSON 内）：`https://github.com/QQ-War/IOSPHOTO/releases/download/iosphoto-ci-latest/IOSPHOTO.ipa`
+
+添加方法：
+1. 在 SideStore 打开 `Sources`
+2. 点击 `+`
+3. 输入上面的源地址并添加
 
 ### 🔍 最终体验
 由于锁屏界面的电池优化，系统不允许在小组件内直接运行实时物理引擎。

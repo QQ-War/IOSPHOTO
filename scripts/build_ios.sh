@@ -11,7 +11,7 @@ fi
 
 BUILD_DIR="$ROOT_DIR/build"
 DERIVED_DATA_PATH="$BUILD_DIR/DerivedData"
-IPA_PATH="$BUILD_DIR/iosphoto-unsigned.ipa"
+IPA_PATH="$BUILD_DIR/IOSPHOTO.ipa"
 APP_PATH="$DERIVED_DATA_PATH/Build/Products/Release-iphoneos/iosphoto.app"
 
 rm -rf "$BUILD_DIR"
