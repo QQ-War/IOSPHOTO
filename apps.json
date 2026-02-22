@@ -3,7 +3,7 @@
   "identifier": "com.qqwar.iosphoto.source",
   "subtitle": "个人照片应用集合",
   "description": "通过 SideStore 分发的 iOS 照片相关应用。",
-  "iconURL": "https://raw.githubusercontent.com/QQ-War/IOSPHOTO/main/icon.png",
+  "iconURL": "https://cdn.jsdelivr.net/gh/QQ-War/IOSPHOTO@main/icon.png",
   "apps": [
     {
       "name": "IOSPHOTO",
@@ -14,7 +14,7 @@
       "versionDescription": "支持从相册提取头像并追加多个滚动方块",
       "downloadURL": "https://github.com/QQ-War/IOSPHOTO/releases/download/iosphoto-ci-latest/IOSPHOTO.ipa",
       "localizedDescription": "这是一款专门为 iOS 设计的照片管理/处理应用。",
-      "iconURL": "https://raw.githubusercontent.com/QQ-War/IOSPHOTO/main/icon.png",
+      "iconURL": "https://cdn.jsdelivr.net/gh/QQ-War/IOSPHOTO@main/icon.png",
       "size": 0
     }
   ]
