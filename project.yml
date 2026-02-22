@@ -30,7 +30,7 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         MARKETING_VERSION: "1.0.0"
         GENERATE_INFOPLIST_FILE: NO
-        UILaunchScreen: ""
+        UILaunchScreen: {}
         SUPPORTS_MACCATALYST: NO
     dependencies:
       - target: GravityWidget
